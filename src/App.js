@@ -2,23 +2,33 @@
 import './App.css';
 import Header from './Header';
 import Sidebar from './Sidebar';
+import Feed from "./Feed";
+import Widgets from './Widgets';
+import Login from './Login';
 
 function App() {
+  const user=null;
+
   return (
     <div className="App">
-      {/* Header */}
+      {!user ?(
+        <Login/>
+      ):(
+
+      <>
       <Header/>
 
-      {/* App Body */}
+      
       <div className='app_body'>
-        {/* Sidebar */}
+        
         <Sidebar/>
-        {/* Feed */}
-        {/* Widgets */}
+    
+        <Feed/>
+        <Widgets/>
 
       </div>
-
-    
+      </>
+      )}
     </div>
   );
 }
